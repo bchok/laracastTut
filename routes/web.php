@@ -11,13 +11,21 @@
 |
 */
 
+Route::get('/tasks/create', 'TasksController@create');
 
 Route::get('/tasks', 'TasksController@index');
 Route::get('/tasks/{task}', 'TasksController@show');
 
-Route::get('/', 'PostController@index');
+Route::patch('/tasks/{task}/edit', 'TasksController@update');
+Route::delete('/tasks/{task}/delete', 'TasksController@destroy');
 
+Route::post('/tasks', 'TasksController@store');
+
+
+Route::get('/', 'PostController@index');
 Route::get('/posts/{post}', 'PostController@show');
+
+
 
 
 

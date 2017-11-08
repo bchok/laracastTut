@@ -18,7 +18,8 @@
 </div>
 <div class="navbar navbar-dark bg-dark">
     <div class="container d-flex justify-content-between">
-        <a href="#" class="navbar-brand">Album</a>
+        <a href="http://localhost:8080/laracast/public/tasks" class="navbar-brand">Tasks</a>
+        <a href="http://localhost:8080/laracast/public/tasks/create" class="navbar-brand">Create a New Task</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
