@@ -20,9 +20,10 @@ Route::patch('/tasks/{task}/edit', 'TasksController@update');
 Route::delete('/tasks/{task}/delete', 'TasksController@destroy');
 
 Route::post('/tasks', 'TasksController@store');
+Route::post('/tasks/{task}/comments', 'CommentsController@create');
 
 
-Route::get('/', 'PostController@index');
+Route::get('/', 'TasksController@index');
 Route::get('/posts/{post}', 'PostController@show');
 
 
