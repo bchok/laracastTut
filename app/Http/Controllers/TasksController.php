@@ -42,6 +42,7 @@ class TasksController extends Controller
         ]);
 
         $task = new Task;
+        $task->user_id = auth()->id();
         $task->body = request('body');
         $task->complete = request('complete');
         $task->save();

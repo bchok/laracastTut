@@ -10,8 +10,9 @@ class CommentsController extends Controller
 {
     //
     public function create(Task $task) {
+        $user_id = auth()->id();
 
-        $task->addComment(request('body'));
+        $task->addComment(request('body'), $user_id);
         return back();
     }
 }

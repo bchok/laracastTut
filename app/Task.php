@@ -15,9 +15,10 @@ class Task extends Model
     {
         return $this->hasMany(Comment::class);
     }
-    public function addComment($body) {
-
-
-        $this->comments()->Create(compact('body'));
+    public function user(){
+        return $this->hasMany(User::class);
+    }
+    public function addComment($body, $user_id) {
+        $this->comments()->Create(compact('body', 'user_id'));
     }
 }

@@ -12,4 +12,7 @@ class Comment extends Model
 
         return $this->belongsTo(task::class);
     }
+    public function user(){
+        return $this->hasMany(User::class);
+    }
 }
