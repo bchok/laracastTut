@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
+use Auth;
 
 class TasksController extends Controller
 {
@@ -14,8 +15,12 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $tasks = Task::all();
+        //$tasks = Task::all();
+        $userID = auth()->id();
+        $tasks = Task::where('user_id', $userID)->get();
+
         return view('tasks.index', compact('tasks'));
+
     }
 
     /**
