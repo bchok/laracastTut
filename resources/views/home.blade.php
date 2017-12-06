@@ -16,6 +16,9 @@
 
                     You are logged in!
                 </div>
+                <div class="panel-body">
+                    <a href="http://localhost:8080/laracast/public/tasks">View Your Task List</a>
+                </div>
             </div>
         </div>
     </div>

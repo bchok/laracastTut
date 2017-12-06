@@ -25,7 +25,7 @@
                 <a href="{{ route('register') }}" class="navbar-brand">Register</a>
                 @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <a href="http://localhost:8080/laracast/public/home" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
