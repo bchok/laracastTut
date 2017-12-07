@@ -7,7 +7,6 @@
             <a href="http://localhost:8080/laracast/public/tasks/create">Create a Task</a>
         @else
             <ul>
-
                     @foreach ($tasks as $task)
                         <li>
                             <a href="/laracast/public/tasks/{{$task->id}}">
@@ -15,9 +14,11 @@
                             </a>
                         </li>
                     @endforeach
+
             </ul>
         @endif
-    @else
+        @else
         <p>Please register for the website to create tasks</p>
     @endif
+
 @endsection

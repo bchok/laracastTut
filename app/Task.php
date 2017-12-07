@@ -3,11 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Task extends Model
 {
     protected $guarded = array();
     public function scopeIncomplete($query){
+        //$id = Auth::id();
+        //return $query->where('user_id', $id)->get();
         return $query->where('complete', 0)->get();
     }
 

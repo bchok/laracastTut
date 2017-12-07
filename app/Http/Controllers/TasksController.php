@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Task;
 use Auth;
 
@@ -16,10 +17,20 @@ class TasksController extends Controller
     public function index()
     {
         //$tasks = Task::all();
-        //$sort = true;
+        //$this->sort = $sort;
+        //$userID = auth()->id();
+        //$tasks = Task::where('user_id', $userID)->get();
+        /**if($sort == 'asc') {
+            $tasks = Task::orderBy('created_at', 'asc')->where('user_id', $userID)->get();
+        }else {
+            $tasks = Task::orderBy('created_at', 'desc')->where('user_id', $userID)->get();
+        }**/
         $userID = auth()->id();
-        $tasks = Task::where('user_id', $userID)->get();
-        //$tasks = Task::orderBy('created_at', 'asc')->where('user_id', $userID)->get();
+        $user = User::find($userID);
+        if($user != null) {
+            $tasks = $user->getTasks();
+        }else
+            $tasks = Task::all();
         return view('tasks.index', compact('tasks'));
 
     }

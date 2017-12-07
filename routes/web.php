@@ -14,6 +14,8 @@
 Route::get('/tasks/create', 'TasksController@create');
 
 Route::get('/tasks', 'TasksController@index');
+//Route::get('/tasks/{sort}', 'TasksController@index');
+
 Route::get('/tasks/{task}', 'TasksController@show');
 
 Route::patch('/tasks/{task}/edit', 'TasksController@update');

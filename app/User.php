@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -28,5 +29,8 @@ class User extends Authenticatable
     ];
     public function user(){
         return $this->hasMany(Task::class);
+    }
+    public function getTasks(){
+        return Task::where('user_id', $this->id)->get();
     }
 }
