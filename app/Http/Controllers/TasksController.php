@@ -16,9 +16,10 @@ class TasksController extends Controller
     public function index()
     {
         //$tasks = Task::all();
+        //$sort = true;
         $userID = auth()->id();
         $tasks = Task::where('user_id', $userID)->get();
-
+        //$tasks = Task::orderBy('created_at', 'asc')->where('user_id', $userID)->get();
         return view('tasks.index', compact('tasks'));
 
     }
@@ -87,6 +88,11 @@ class TasksController extends Controller
      */
     public function update(Task $task)
     {
+        $this->validate(request(), [
+            'body' => 'required|min:5',
+            'complete' => 'required'
+        ]);
+
         $task->body = request('body');
         $task->complete = request('complete');
         $task->save();

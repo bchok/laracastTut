@@ -12,6 +12,10 @@ class CommentsController extends Controller
     public function create(Task $task) {
         $user_id = auth()->id();
 
+        $this->validate(request(), [
+            'body' => 'required|min:5',
+        ]);
+
         $task->addComment(request('body'), $user_id);
         return back();
     }

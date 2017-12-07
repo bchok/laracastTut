@@ -56,7 +56,7 @@
             @endforeach
         </ul>
     </div>
-    Add Comment Collapse
+    @include('errors')
 
 
 
