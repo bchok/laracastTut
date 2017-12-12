@@ -22,6 +22,8 @@
                     @endforeach
 
             </table>
+            <a href="#" class="btn btn-info">Order By Oldest</a>
+            <a href="http://localhost:8080/laracast/public/index_reverse" class="btn btn-info">Order By Newest</a>
         @endif
         @else
         <p>Please register for the website to create tasks</p>

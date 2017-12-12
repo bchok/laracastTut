@@ -34,6 +34,16 @@ class TasksController extends Controller
         return view('tasks.index', compact('tasks'));
 
     }
+    public function index_reverse(){
+        $userID = auth()->id();
+        $user = User::find($userID);
+        if($user != null) {
+            $tasks = $user->getTasks();
+        }else
+            $tasks = Task::all();
+        return view('tasks.index_reverse', compact('tasks'));
+
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -25,7 +25,10 @@ Route::post('/tasks', 'TasksController@store');
 Route::post('/tasks/{task}/comments', 'CommentsController@create');
 
 
+Route::get('/index_reverse', 'TasksController@index_reverse');
 Route::get('/', 'TasksController@index');
+
+
 Route::get('/posts/{post}', 'PostController@show');
 
 
