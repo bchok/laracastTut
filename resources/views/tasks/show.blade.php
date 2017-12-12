@@ -22,14 +22,14 @@
                 @endif
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button style="background-color: #343a40; border-color: #343a40;" type="submit" class="btn btn-primary">Save</button>
 
     </form>
     <p>
     <form action="/laracast/public/tasks/{{$task->id}}/delete" method="post" class="col-sm-8">
         {{ csrf_field() }}
         {{ method_field('DELETE') }}
-        <button type="submit" class="btn btn-primary">Delete</button>
+        <button style="background-color: #343a40; border-color: #343a40;" type="submit" class="btn btn-primary">Delete</button>
 
     </form>
     Created at: {{date("F d, Y h:i:s", strtotime($task->created_at))}}</br>
@@ -42,7 +42,7 @@
                 <textarea name="body" placeholder="Your comment" class="form-control"></textarea>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Add Comment</button>
+                <button style="background-color: #343a40; border-color: #343a40;" type="submit" class="btn btn-primary">Add Comment</button>
             </div>
         </form>
         <ul class="list-group">

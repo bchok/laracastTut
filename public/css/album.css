@@ -56,3 +56,20 @@ footer {
 footer p {
     margin-bottom: .25rem;
 }
+
+.btn {
+    background-color: #343a40!important;
+    border-color: #343a40!important;
+}
+.btn:hover {
+    background-color: black!important;
+    border-color: black!important;
+}
+.btn-primary {
+    background-color: #343a40!important;
+    border-color: #343a40!important;
+}
+.btn-primary:hover {
+    background-color: black!important;
+    border-color: black!important;
+}

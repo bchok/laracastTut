@@ -7,6 +7,9 @@
             <a href="http://localhost:8080/laracast/public/tasks/create">Create a Task</a>
         @else
             <table cellpadding="10">
+                    <th>Task Name</th>
+                    <th>Task Status</th>
+                    <th>Created On</th>
                     @foreach ($tasks as $task)
                         <tr>
                             <td><a href="/laracast/public/tasks/{{$task->id}}">
@@ -17,13 +20,13 @@
                             @else
                                 <td>Complete</td>
                             @endif
-                            <td>{{$task->created_at}}</td>
+                            <td>{{date("F d, Y h:i:s", strtotime($task->created_at))}}</td>
                         </tr>
                     @endforeach
 
             </table>
-            <a href="#" class="btn btn-info">Order By Oldest</a>
-            <a href="http://localhost:8080/laracast/public/index_reverse" class="btn btn-info">Order By Newest</a>
+            <a style="background-color: #343a40; border-color: #343a40;" href="#" class="btn btn-info">Order By Oldest</a>
+            <a style="background-color: #343a40; border-color: #343a40;" href="http://localhost:8080/laracast/public/index_reverse" class="btn btn-info">Order By Newest</a>
         @endif
         @else
         <p>Please register for the website to create tasks</p>
