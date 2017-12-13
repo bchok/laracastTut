@@ -6,10 +6,12 @@
         @if($tasks->isEmpty())
             <a href="http://localhost:8080/laracast/public/tasks/create">Create a Task</a>
         @else
-            <table cellpadding="10">
+            <table class="table table-striped" style="margin-top:50px;"cellpadding="10">
+                <thead class="thead-dark">
                 <th>Task Name</th>
                 <th>Task Status</th>
                 <th>Created On</th>
+                </thead>
                 @foreach ($tasks->reverse() as $task)
                     <tr>
                         @if($task->complete != 1)
@@ -31,6 +33,7 @@
             </table>
             <a style="background-color: #343a40; border-color: #343a40;" href="http://localhost:8080/laracast/public/tasks" class="btn btn-info">Order By Oldest</a>
             <a style="background-color: #343a40; border-color: #343a40;" href="#" class="btn btn-info">Order By Newest</a>
+
         @endif
     @else
         <p>Please register for the website to create tasks</p>

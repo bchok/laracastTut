@@ -6,10 +6,12 @@
         @if($tasks->isEmpty())
             <a href="http://localhost:8080/laracast/public/tasks/create">Create a Task</a>
         @else
-            <table cellpadding="10">
+            <table class="table table-striped" style="margin-top:50px;"cellpadding="10">
+                <thead class="thead-dark">
                     <th>Task Name</th>
                     <th>Task Status</th>
                     <th>Created On</th>
+                </thead>
                 @foreach ($tasks as $task)
                     <tr>
                         @if($task->complete != 1)

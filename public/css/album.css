@@ -73,3 +73,7 @@ footer p {
     background-color: black!important;
     border-color: black!important;
 }
+
+.table .thead-dark th  {
+    background-color: #343a40!important;
+}
