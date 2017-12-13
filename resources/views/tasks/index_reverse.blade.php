@@ -12,15 +12,19 @@
                 <th>Created On</th>
                 @foreach ($tasks->reverse() as $task)
                     <tr>
-                        <td><a href="/laracast/public/tasks/{{$task->id}}">
-                                {{$task->body}}
-                            </a></td>
                         @if($task->complete != 1)
+                            <td><a href="/laracast/public/tasks/{{$task->id}}">
+                                    {{$task->body}}
+                                </a></td>
                             <td>Incomplete</td>
+                            <td>{{date("F d, Y h:i:s", strtotime($task->created_at))}}</td>
                         @else
-                            <td>Complete</td>
+                            <td><s><a href="/laracast/public/tasks/{{$task->id}}">
+                                        {{$task->body}}
+                                    </a></s></td>
+                            <td><s>Complete</s></td>
+                            <td><s>{{date("F d, Y h:i:s", strtotime($task->created_at))}}</s></td>
                         @endif
-                        <td>{{date("F d, Y h:i:s", strtotime($task->created_at))}}</td>
                     </tr>
                 @endforeach
 
